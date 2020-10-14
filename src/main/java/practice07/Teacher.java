@@ -3,7 +3,7 @@ package practice07;
 public class Teacher extends Person {
 
     private Klass klass;
-
+    private int flag =0;
 
     public Klass getKlass() {
         return klass;
@@ -11,10 +11,12 @@ public class Teacher extends Person {
 
     public Teacher(String name, int age, Klass klass) {
         super(name, age);
+        flag = 1;
         this.klass = klass;
     }
     public Teacher(String name, int age) {
         super(name, age);
+        flag=2;
     }
 
 
@@ -26,11 +28,14 @@ public class Teacher extends Person {
         return super.introduce() +  " I am a Teacher. I teach Class 2.";
     }
     public String introduceWith(Student name){
-        if(klass != null)
+        if(klass.getNumber() == 2)
         {
-            return super.introduce() +  " I am a Teacher. I don't teach Jerry.";
+            System.out.println("number  is: " + klass.getNumber());
+            return super.introduce() +  " I am a Teacher. I teach Jerry.";
+
         }
-        return super.introduce() +  " I am a Teacher. I teach Jerry.";
+        return super.introduce() +  " I am a Teacher. I don't teach Jerry.";
+
 
     }
 }
