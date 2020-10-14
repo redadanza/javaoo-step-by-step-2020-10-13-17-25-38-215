@@ -18,6 +18,6 @@ public class Student extends Person {
         super(name, age);
     }
     public String introduce(){
-        return super.basicIntroduce() +  " I am a Student. I am at Class 2.";
+        return super.introduce() +  " I am a Student. I am at Class 2.";
     }
 }
