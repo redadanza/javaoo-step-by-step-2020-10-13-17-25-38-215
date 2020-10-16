@@ -46,7 +46,5 @@ public class Person {
         return String.format("I teach Jerry");
 
     }
-    public String assignLeader(Student leader){
-        return "I am Leader of Class 2.";
-    }
+
 }

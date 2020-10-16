@@ -1,11 +1,13 @@
 package practice10;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Klass {
     private int number;
     private Object leader;
     private Object student;
-
+    private List<Student> members = new ArrayList<>();
     public Object getLeader() {
         return leader;
     }
@@ -20,21 +22,18 @@ public class Klass {
     public String getDisplayName(){
         return "Class " + number;
     }
-    public Object assignLeader(Student student){
-
-        if(student.getKlass().getNumber() == 5)
+    public void assignLeader(Student student){
+        if(members.contains(student))
         {
-            System.out.print("It is not one of us.\n");
-            return null;
+            this.leader = student;
         }
         else{
-            leader = student;
+            System.out.print("It is not one of us.\n");
         }
 
-        return student;
     }
-    public Object appendMember(Student student){
+    public void appendMember(Student member){
 
-        return student;
+        members.add(member);
     }
 }

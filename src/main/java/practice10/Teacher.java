@@ -6,7 +6,7 @@ public class Teacher extends Person {
 
     private Klass klass;
 
-    private LinkedList<Klass> classes;
+    private LinkedList<Klass> classes = new LinkedList<>();
 
     public LinkedList<Klass> getClasses() {
         return classes;
@@ -32,21 +32,30 @@ public class Teacher extends Person {
 
 
     public String introduce(){
-        try {
-            if (classes.size() != 0) {
-                return super.introduce() + " I am a Teacher. I teach Class 2, 3.";
+        //implement logic from klass list
+//        try {
+//            if (classes.size() != 0) {
+//                return super.introduce() + " I am a Teacher. I teach Class 2, 3.";
+//            }
+//        }
+//        catch (Exception e){
+//            //catch method
+//        }
+//
+//        if(klass == null)
+//        {
+//            return super.introduce() +  " I am a Teacher. I teach No Class.";
+//        }
+//
+//        return super.introduce() +  " I am a Teacher. I teach Class 2";
+        String classesNum = "";
+        for (int index = 0; index < classes.size();index++){
+            classesNum += classes.get(index).getNumber();
+            if(!((classes.size() - index) == 1)){
+                classesNum += ", ";
             }
         }
-        catch (Exception e){
-            //esfs
-        }
-
-        if(klass == null)
-        {
-            return super.introduce() +  " I am a Teacher. I teach No Class.";
-        }
-
-        return super.introduce() +  " I am a Teacher. I teach Class 2";
+        return classes.size() != 0 ? super.introduce()+ " " + "I am a Teacher. I teach Class "+ classesNum +"." : super.introduce()+ " " + "I am a Teacher. I teach No Class.";
     }
     public String introduceWith(Student name){
         if(classes.contains(name.getKlass()))
