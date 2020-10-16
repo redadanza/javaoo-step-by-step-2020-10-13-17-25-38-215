@@ -32,22 +32,6 @@ public class Teacher extends Person {
 
 
     public String introduce(){
-        //implement logic from klass list
-//        try {
-//            if (classes.size() != 0) {
-//                return super.introduce() + " I am a Teacher. I teach Class 2, 3.";
-//            }
-//        }
-//        catch (Exception e){
-//            //catch method
-//        }
-//
-//        if(klass == null)
-//        {
-//            return super.introduce() +  " I am a Teacher. I teach No Class.";
-//        }
-//
-//        return super.introduce() +  " I am a Teacher. I teach Class 2";
         String classesNum = "";
         for (int index = 0; index < classes.size();index++){
             classesNum += classes.get(index).getNumber();
