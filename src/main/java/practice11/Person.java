@@ -42,7 +42,7 @@ public class Person {
         return "My name is Tom. I am 21 years old.";
     }
     public String introduceWith(Student name){
-        return String.format("I teach Jerry");
+        return String.format("I teach %s", name.getName());
 
     }
 }

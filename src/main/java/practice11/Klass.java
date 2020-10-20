@@ -6,7 +6,6 @@ import java.util.List;
 public class Klass {
     private int number;
     private Object leader;
-    private Object student;
     private List<Student> members = new ArrayList<>();
     private List<Observer> observers = new ArrayList<>();
     public Object getLeader() {

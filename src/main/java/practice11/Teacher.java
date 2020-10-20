@@ -1,6 +1,7 @@
 package practice11;
 
 import java.util.LinkedList;
+import java.util.stream.IntStream;
 
 public class Teacher extends Person implements Observer{
 
@@ -31,13 +32,13 @@ public class Teacher extends Person implements Observer{
 
 
     public String introduce(){
-        String classesNum = "";
-        for (int index = 0; index < classes.size();index++){
-            classesNum += classes.get(index).getNumber();
-            if(!((classes.size() - index) == 1)){
-                classesNum += ", ";
+        StringBuilder classesNum = new StringBuilder();
+        IntStream.range(0, classes.size()).forEach(index -> {
+            classesNum.append(classes.get(index).getNumber());
+            if (!((classes.size() - index) == 1)) {
+                classesNum.append(", ");
             }
-        }
+        });
         return classes.size() != 0 ? super.introduce()+ " " + "I am a Teacher. I teach Class "+ classesNum +"." : super.introduce()+ " " + "I am a Teacher. I teach No Class.";
     }
     public String introduceWith(Student name){
