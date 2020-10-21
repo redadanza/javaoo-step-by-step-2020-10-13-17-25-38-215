@@ -42,14 +42,8 @@ public class Teacher extends Person implements Observer{
         return classes.size() != 0 ? super.introduce()+ " " + "I am a Teacher. I teach Class "+ classesNum +"." : super.introduce()+ " " + "I am a Teacher. I teach No Class.";
     }
     public String introduceWith(Student name){
-        if(classes.contains(name.getKlass()))
-        {
-            //System.out.println("number  is: " + klass.getNumber());
-            return super.introduce() +  " I am a Teacher. I teach Jerry.";
-
-        }
-        return super.introduce() +  " I am a Teacher. I don't teach Jerry.";
-
+       return  classes.contains(name.getKlass()) ? super.introduce() +  " I am a Teacher. I teach Jerry."
+            : super.introduce() +  " I am a Teacher. I don't teach Jerry.";
 
     }
     public  boolean isTeaching(Student student){

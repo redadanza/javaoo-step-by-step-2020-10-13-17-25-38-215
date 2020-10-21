@@ -7,6 +7,7 @@ public class Klass {
     private int number;
     private Object leader;
     private List<Student> members = new ArrayList<>();
+    //separate observers
     private List<Observer> observers = new ArrayList<>();
     public Object getLeader() {
         return leader;
